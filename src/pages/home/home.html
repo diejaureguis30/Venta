@@ -1,14 +1,36 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Avisos de ocasión (Bienes raíces)
     </ion-title>
+    <ion-buttons end>
+    <button ion-button icon-only (click)="VerFav(c)" style="color: red"> <ion-icon name="heart"></ion-icon> </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+ <ion-list>
+   <ion-list-header>
+      Venta
+   </ion-list-header>
+    <ion-item *ngFor="let c of Casas" (click)="verCasa(c)" style='background-color: #A8D0DB'>
+      <ion-avatar item-start>
+        <img src={{c.imagen}}>
+      </ion-avatar> 
+      <ion-col>
+        <ion-row>
+          <h2>Colonia:{{c.lugar}}</h2>
+        </ion-row>
+         <ion-row>
+           <h2>Precio: {{c.precio}}</h2>
+         </ion-row>
+         <ion-row>
+           <h2>Cuartos:{{c.cuartos}}</h2>
+         </ion-row>
+      </ion-col>  
+     </ion-item>
+ </ion-list>
+
+
 </ion-content>
